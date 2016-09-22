@@ -1,0 +1,85 @@
+# [t] -> creates question with title
+# [s] -> multiple choice, single answer
+# [m] -> multiple choice, multiple answers
+# [g] -> gap
+# _ correct answer
+# - incorrect answer
+# [gap]content of gap[/gap] introduces a gap to be filled
+# 1 empty line after question
+# 2 empty lines at the end of file
+
+
+[t][m] Multiple Choice question with several answers: Encodings
+Which of the following are character encodings?
+- Unicode
+_ Latin-1
+_ UTF-8
+- Huffman coding
+_ UTF-16
+_ ASCII
+
+[t][m] Multiple Choice question with several answers: RDF, RDFS and OWL
+Which of these statements can be modeled with OWL, but not with RDFS?
+- Every mouse is a tiger.
+_ A mosquito is never an elefant
+_ If Tom eats Jerry, Jerry is eaten by Tom.
+_ Every cat has at least three legs.
+- Everybody who has a pet is an animal lover.
+
+[t][s] Multiple Choice question with a single answer: Instance, Class or Property?
+You have the following RDFS statement:
+   ex:hasFruit rdfs:domain ex:Plant .
+Is hasFruit an instance, a class or a property?
+_ Property
+- Class
+- Instance
+
+[t][s] Multiple Choice question with a single answer: XMLSchema
+What does XML Schema do?
+- It allows the definition of semantic constraints on an XML file.
+- It allows the definition of lexical constraints on an XML file.
+_ It allows the definition of syntactic constraints on an XML file.
+
+[t][g] Gap question: Properties
+A bank account must belong to a customer, only by customers can have a bank account belonging to them.
+(ex:Account, ex:Customer, ex:accountBelongsToCustomer)
+ex:accountBelongsToCustomer [gap]rdfs:range[/gap] [gap]ex:Customer[/gap] .
+ex:accountBelongsToCustomer [gap]rdfs:domain[/gap] ex:Account .
+
+[t][g] Gap question: Classes and instances
+Santa Inc. is different from the individual Nico Claus.
+(ex:NicoClaus, ex:SantaInc)
+ex:SantaInc [gap]owl:differentFrom[/gap] ex:NicoClaus .
+
+
+[m] No question will be created for this because there is no [t] -- Error test
+Which statements about RDF/S are true?
+- Properties can only be used in the predicate position of a statement.
+_ RDFS statements are triples.
+- RDF statements may contain more than one object.
+_ RDFS distinguishes between classes and instances.
+
+[t]    No type of question, no answer choices are created -- Error test
+Which of the following statements about UTF-8 are true?
+- Everybody uses UTF-8.
+_ UTF-8 a way of representing Unicode code points in zeros and ones.
+- UTF-9 is the new version of UTF-8.
+_ Text written in ASCII looks the same in UTF-8.
+- UTF-8 uses 8 byte to represent a letter.
+
+[t][s] Single-choice question with multiple correct answers -- Error test
+You have the following RDFS document with two statements:
+   ex:ICE rdf:type ex:Train .
+   ex:Train rdfs:subClassOf ex:Vehicle .
+Is ICE an instance of Vehicle?
+- No.
+_ Yes.
+_ Maybe.
+
+[t][s] A question without text -- Error test
+- I like it.
+_ I do not like it.
+
+[t][s] A question without answer choices -- Error test
+Does this really work?
+
